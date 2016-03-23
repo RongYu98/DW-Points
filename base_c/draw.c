@@ -49,8 +49,15 @@ void add_sphere( struct matrix * points,
 void generate_sphere( struct matrix * points, 
 		      double cx, double cy, double r, 
 		      double step ) {
-  
-  
+  double p,t,x,y,z;
+  for (p=0; p<1.001; p+=step){
+    for (t=0; t<1.001; t+=step){
+      x = r*cos(M_Pi * t) + cx;
+      y = r*sin(M_Pi * t)cos(2*M_Pi*p) + cy;
+      z = r*sin(M_Pi * t)sin(2*M_Pi*p);
+      add_point(points, x, y, z);
+    }
+  }    
 }    
 
 /*======== void add_torus() ==========
@@ -124,23 +131,13 @@ void add_box( struct matrix * points,
   */
 
   add_edge(points, x ,y , z, x, y, z);
-  add_edge(points, x, y-h, z, x, y-h, z);
-  add_edge(points, x, y, z-d, x, y, z-d);
-  add_edge(points, x ,y-h,z-d, x ,y-h,z-d);
-  add_edge(points,x+w,y,z,x+w,y,z);
-  add_edge(points,x+w,y-h,z,x+w,y-h,z);
-  add_edge(points,x+w,y,z-d,x+w,y,z-d);
+  add_edge(points, x, y-height, z, x, y-height, z);
+  add_edge(points, x, y, z-depth, x, y, z-depth);
+  add_edge(points, x ,y-height,z-depth, x ,y-height,z-depth);
+  add_edge(points, x+width, y, z, x+width, y, z);
+  add_edge(points, x+width, y-height, z, x+width, y-height, z);
+  add_edge(points, x+width, y, z-depth, x+width, y, z-depth);
   add_edge(points,x+w, y-h, z-d,x+w, y-h, z-d);
-
-  /*
-    int p,t;
-    
-    for (p=0; p<1.001; p+=step){
-    for (t=0; t<1; t++){
-    X = rcos (Pi * T) //half circle
-    Y = rsin(Pi T)cos(2Pi p)
-    Z = rsin(Pi T)sin(2Pi p)
-  */
 }
   
 /*======== void add_circle() ==========
