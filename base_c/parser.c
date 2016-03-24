@@ -75,7 +75,7 @@ void parse_file ( char * filename,
   double angle;
   color g;
 
-  g.red = 255;
+  g.red = 100;
   g.green = 0;
   g.blue = 255;
   
@@ -89,7 +89,7 @@ void parse_file ( char * filename,
   while ( fgets(line, 255, f) != NULL ) {
     line[strlen(line)-1]='\0';
     //printf(":%s:\n",line);
-    double x, y, z, x1, y1, z1, x2, y2, z2, x3, y3, z3, x4, y4, z4;
+    double x, y, z, x1, y1, z1, x2, y2, z2, x3, y3, z3, x4, y4, z4, w, h, d,step,r1,r2, cx,cy,r;
    
     
     if ( strncmp(line, "line", strlen(line)) == 0 ) {
@@ -166,6 +166,27 @@ void parse_file ( char * filename,
       tmp = make_rotZ( angle);
       matrix_mult(tmp, transform);
     }
+    else if (strncmp(line, "box", strlen(line)) == 0 ){
+      printf("%s", line);
+      fgets(line, 255, f);
+      printf("%s", line);
+      sscanf(line, "%lf %lf %lf %lf %lf %lf ", &x, &y, &z, &w, &h, &d);
+      add_box( pm, x,y,z,w,h,d);
+    }
+    else if (strncmp(line, "sphere", strlen(line)) == 0 ){
+      printf("%s", line);
+      fgets(line, 255, f);
+      printf("%s", line);
+      sscanf(line, "%lf %lf %lf %lf ", &cx, &cy, &r, &step);
+      add_box( pm, x,y,z,w,h,d);
+    }
+    else if (strncmp(line, "torus", strlen(line)) == 0 ){
+      //printf("%s", line);
+      fgets(line, 255, f);
+      //printf("%s", line);
+      sscanf(line, "%lf %lf %lf %lf %lf ", &cx, &cy, &r1, &r2, &step);
+      add_box( pm, x,y,z,w,h,d);
+    } 
     else if ( strncmp(line, "ident", strlen(line)) == 0 ) {
       ident(transform);
     }
