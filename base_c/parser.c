@@ -176,16 +176,16 @@ void parse_file ( char * filename,
     else if (strncmp(line, "sphere", strlen(line)) == 0 ){
       printf("%s", line);
       fgets(line, 255, f);
-      printf("%s", line);
+      printf("%s\n", line);
       sscanf(line, "%lf %lf %lf %lf ", &cx, &cy, &r, &step);
-      add_box( pm, x,y,z,w,h,d);
+      add_sphere( pm, cx,  cy, r, step);
     }
     else if (strncmp(line, "torus", strlen(line)) == 0 ){
       //printf("%s", line);
       fgets(line, 255, f);
       //printf("%s", line);
       sscanf(line, "%lf %lf %lf %lf %lf ", &cx, &cy, &r1, &r2, &step);
-      add_box( pm, x,y,z,w,h,d);
+      add_torus( pm, cx,cy,r1,r2,step);
     } 
     else if ( strncmp(line, "ident", strlen(line)) == 0 ) {
       ident(transform);

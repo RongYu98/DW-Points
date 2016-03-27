@@ -39,6 +39,8 @@ void add_sphere( struct matrix * points,
     add_edge(points, x, y, z, x+2, y+2, z+2);
   }
   free_matrix( tmp );
+  //print_matrix(points);
+  
 }
 
 /*======== void generate_sphere() ==========
