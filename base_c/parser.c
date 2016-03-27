@@ -211,8 +211,16 @@ void parse_file ( char * filename,
     else if ( strncmp(line, "quit", strlen(line)) == 0 ) {
       return;
     }
+    else if ( strncmp(line, "#", 1 ) == 0 ){
+      printf(" Comment \n");
+    }
+    else if ( strncmp(line, "clear", strlen(line)) == 0 ){
+      //clear_matrix();
+      printf("Clear? What's that?\n");
+    }
     else {
-      printf("Invalid command\n");
+      printf("Invalid command: [%s]\n", line);
+      //printf("%c\n", line[0]);
     }
   }
   
