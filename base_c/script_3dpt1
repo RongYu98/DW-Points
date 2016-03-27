@@ -1,8 +1,6 @@
 #test box mesh
 box
 0 0 0 200 100 400
-save
-box.png
 ident
 xrotate
 20
@@ -11,13 +9,13 @@ yrotate
 translate
 150 200 0
 apply
+save
+box.png
 #display
 #clear the edge matrix, test the sphere
 clear
 sphere
 0 0 200
-save
-circle.png
 #display
 #rotate 90 degrees about y to check lines
 ident
@@ -57,8 +55,6 @@ apply
 clear
 torus
 0 0 25 150
-save
-torus.png
 #display
 #rotate 90 degrees about y to check lines
 ident

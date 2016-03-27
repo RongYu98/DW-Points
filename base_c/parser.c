@@ -215,7 +215,7 @@ void parse_file ( char * filename,
       printf(" Comment \n");
     }
     else if ( strncmp(line, "clear", strlen(line)) == 0 ){
-      //clear_matrix();
+      clear_matrix( pm );
       printf("Clear? What's that?\n");
     }
     else {

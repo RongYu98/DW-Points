@@ -4,6 +4,23 @@
 
 #include "matrix.h"
 
+
+/*--------------void *clear_matrix() -----------
+Inputs: struct matrix *m
+Returns
+1. Zeros out a  matrix
+2. Sets the lastcol to 0
+*/
+void clear_matrix(  struct matrix *m){
+  int c;
+  for ( c=0 ; c<m->lastcol; c++){
+    m->m[0][c] = 0;
+    m->m[1][c] = 0;
+    m->m[2][c] = 0;
+    m->m[3][c] = 0;
+  }
+}
+
 /*-------------- struct matrix *new_matrix() --------------
 Inputs:  int rows
          int cols 
