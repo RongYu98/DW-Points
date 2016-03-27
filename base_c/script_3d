@@ -11,6 +11,8 @@ yrotate
 translate
 150 200 0
 apply
+save
+box2.png
 #display
 #clear the edge matrix, test the sphere
 clear
