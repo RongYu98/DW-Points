@@ -17,7 +17,7 @@ clear
 sphere
 0 0 200
 save
-circle.png
+sphere.png
 #display
 #rotate 90 degrees about y to check lines
 ident
@@ -26,6 +26,8 @@ yrotate
 translate
 250 250 0
 apply
+save
+sphere2.png
 #display
 #reset sphere, rotate 90 degrees about x to check lines
 ident
