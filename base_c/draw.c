@@ -60,6 +60,7 @@ void add_sphere( struct matrix * points,
 void generate_sphere( struct matrix * points, 
 		      double cx, double cy, double r, 
 		      double step ) {
+  step = 1/step;
   double p,t,x,y,z;
   for (p=0; p<1.001; p+=step){
     for (t=0; t<1.001; t+=step){
@@ -123,6 +124,7 @@ void add_torus( struct matrix * points,
 void generate_torus( struct matrix * points, 
 		     double cx, double cy, double r1, double r2, 
 		     double step ) {
+  step = 1/step;
   double p,t,x,y,z;
   for (p=0; p<1.001; p+=step){
     for (t=0; t<1.001; t+=step){
@@ -159,7 +161,6 @@ void add_box( struct matrix * points,
   add_point(points, x, y, z-depth);
   add_point(points, x ,y-height,z-depth);
   add_point(points, x+width, y, z);
-  
   add_point(points, x+width, y-height, z);
   add_point(points, x+width, y, z-depth);
   add_point(points, x+width, y-height, z-depth);
