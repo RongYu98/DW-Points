@@ -159,7 +159,7 @@ void parse_file ( char * filename,
       matrix_mult(tmp, transform);
     }
     else if ( strncmp(line, "zrotate", strlen(line)) == 0 ) {
-      //printf("ROTATE!\n");
+      printf("ROTATE!\n");
       fgets(line, 255, f);
       sscanf(line, "%lf", &angle);
       angle = angle * (M_PI / 180);
@@ -191,7 +191,7 @@ void parse_file ( char * filename,
       ident(transform);
     }
     else if ( strncmp(line, "apply", strlen(line)) == 0 ) {
-      //printf("APPLY!\n");
+      printf("APPLY!\n");
       //print_matrix( transform );
       //      print_matrix(pm);
       matrix_mult(transform, pm);
