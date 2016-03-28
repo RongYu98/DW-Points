@@ -105,7 +105,7 @@ torus
 torus
 500 235 80 80 100
 sphere
-100 235 10 100
+85 235 10 100
 #display
 save
 missile.png
