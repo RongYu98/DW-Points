@@ -5,9 +5,9 @@ line
 line
 125 235 0 200 220 0
 torus
-125 235 10 20 10
+125 235 10 20 100
 torus
-150 235 40 60 20
+200 235 40 60 100
 #display
 save
 missile.png
